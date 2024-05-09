@@ -24,9 +24,9 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(960, 720)
+  createCanvas(1200, 720)
   noCursor()
-  fishes = font.textToPoints("MARCUS",  40, 450, 250, {sampleFactor: 0.06, simplifyThreshold: 0})
+  fishes = font.textToPoints("MARCUS",  155, 450, 250, {sampleFactor: 0.06, simplifyThreshold: 0})
   ellipseMode(CENTER)
   imageMode(CENTER)
   angleMode(DEGREES)
@@ -51,8 +51,8 @@ function draw() {
   push()
   for (let i = 0; i < 100; i++) {
     noStroke()
-    fill(200, 150 - i, 0 + i)
-    circle(width/2, 10, 1714 - r * i)
+    fill(200, 160 - i, 0 + i)
+    circle(width/2, -50, 1950 - r * i)
   }
   pop()
 
@@ -179,13 +179,13 @@ class Shark {
     push()
 
     //shark mouth animation
-    if(mouseX > 45 && mouseX < 940 && mouseY > 270 && mouseY < 457) {
+    if(mouseX > 140 && mouseX < 1060 && mouseY > 270 && mouseY < 457) {
       sharkMouth = 1
     } else {
       sharkMouth = 0
     }
 
-    if (mouseIsPressed && mouseX > 45 && mouseX < 940 && mouseY > 270 && mouseY < 457){
+    if (mouseIsPressed && mouseX > 140 && mouseX < 1060 && mouseY > 270 && mouseY < 457){
       sharkMouth = 0
     } else if (mouseIsPressed) {
       sharkMouth = 1
@@ -242,7 +242,8 @@ class Bubble {
 }
 
 function createBubbles() {
-  let b = new Bubble(random(0, 960), 720, random(1, 20), random(0.05, 0.45))
+  let b = new Bubble(random(0, 1200), 720, random(1, 20), random(0.05, 0.45))
   bubbles.push(b)
 }
+
 
